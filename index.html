@@ -15,8 +15,8 @@
         <label for="blur"> Blur:</label>
         <input name="blur" type="range" min="0" max="20" value="10" data-suf="px">
 
-        <label for="colour">Colour: </label>
-        <input name="colour" type="color" value='#ADD8E6'>
+        <label for="color">Colour: </label>
+        <input name="color" type="color" value='#ADD8E6'>
 
     </div>
 
@@ -30,12 +30,18 @@
         :root{
             --size: 100px;
             --blur: 10px;
-            --colour: #ADD8E6;
+            --color: #ADD8E6;
         }
         h1{ 
-            color: var(--colour);
+            h1{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--color);
             filter: blur(var(--blur));
             font-size: var(--size);
+        }
         }
         .change{
         position: fixed;  /* add this */
