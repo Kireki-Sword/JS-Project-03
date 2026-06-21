@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1> TEST </h1>
-    <div class="change" margin-top: 210px>
+    <div class="change">
 
         <label for="size"> Size:</label>
         <Input name="size" type="range" min="50" max="200" value="100" data-suf="px">
@@ -21,6 +21,12 @@
     </div>
 
     <style>
+        body{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
         :root{
             --size: 100px;
             --blur: 10px;
@@ -31,6 +37,14 @@
             filter: blur(var(--blur));
             font-size: var(--size);
         }
+        .change{
+        position: fixed;  /* add this */
+        bottom: 20px;     /* add this */
+        left: 0;          /* add this */
+        width: 100%;      /* add this */
+        text-align: center; /* add this */
+    }
+
     </style>
   
 <script>
