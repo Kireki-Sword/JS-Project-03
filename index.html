@@ -1,67 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Project 03</title>
-  
 </head>
 <body>
-    <h1> TEST </h1>
+    <h1>TEST</h1>
     <div class="change">
 
-        <label for="size"> Size:</label>
-        <Input name="size" type="range" min="50" max="200" value="100" data-suf="px">
+        <label for="size">Size:</label>
+        <input name="size" type="range" min="50" max="200" value="100" data-suf="px">
         
-        <label for="blur"> Blur:</label>
-        <input name="blur" type="range" min="0" max="20" value="10" data-suf="px">
+        <label for="blur">Blur:</label>
+        <input name="blur" type="range" min="0" max="20" value="0" data-suf="px">
 
-        <label for="color">Colour: </label>
-        <input name="color" type="color" value='#ADD8E6'>
+        <label for="textColor">Colour:</label>
+        <input name="textColor" type="color" value='#ADD8E6'>
 
     </div>
 
     <style>
         body{
+            margin: 0;
             display: flex;
-            text-align: center;
             justify-content: center;
             align-items: center;
+            height: 100vh;
         }
         :root{
             --size: 100px;
-            --blur: 10px;
-            --color: #ADD8E6;
+            --blur: 0px;
+            --textColor: #ADD8E6;
         }
         h1{ 
-            h1{
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: var(--color);
+            color: var(--textColor);
             filter: blur(var(--blur));
             font-size: var(--size);
         }
-        }
         .change{
-        position: fixed;  /* add this */
-        bottom: 400px;     /* add this */
-        left: 0;          /* add this */
-        width: 100%;      /* add this */
-        text-align: center; /* add this */
-    }
-
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
     </style>
   
 <script>
     const inputs = document.querySelectorAll('.change input')
     function doTheChanges(){
         const suffix = this.dataset.suf || '';
-        document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix)
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
     }
     inputs.forEach(input => input.addEventListener('change', doTheChanges))
     inputs.forEach(input => input.addEventListener('mousemove', doTheChanges))
-  
 </script>
 </body>
 </html>
