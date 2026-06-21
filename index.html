@@ -35,12 +35,14 @@
         }
         h1{ 
             position: fixed;
-            bottom: 50%;
+            bottom: 45%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            transform-origin: bottom center;
             color: var(--textColor);
             filter: blur(var(--blur));
             font-size: var(--size);
+            white-space: nowrap;
         }
         .change{
             position: fixed;
